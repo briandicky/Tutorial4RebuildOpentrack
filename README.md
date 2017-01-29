@@ -1,4 +1,4 @@
-# Tutorial4RebuildOpentrack
+#Tutorial4RebuildOpentrack
 Here are some instructions on how to build opentrack using under Microsoft Visual Studio C++.
 
 ##Requirements
@@ -26,6 +26,30 @@ or similar, depending on your Qt version.
 ####(Optional) Compile a static version of Qt library
 
 ###Installing OpenCV
+It is recommended to build opentrack's custom version of OpenCV.
+```
+git clone --recurse-submodules https://github.com/opentrack/opentrack-depends.git
+```
+
+You can also git clone from opentrack's fork of OpenCV.
+```
+git clone https://github.com/opentrack/opencv opencv-source
+```
+
+It will work with the original version of OpenCV, too.
+```
+git clone https://github.com/opencv/opencv.git opencv-source
+```
+
+Then we generate a MSVC project using `cmake` or `cmake-gui`.
+Here it is assumed that we build under Windows 10 32-bit. The following steps should make it work.
+ - Using cmake-gui, then select VC++ 2015, the build system, to generate the OpenCV MSVC project.
+ - Add `/DHAVE_DSHOW` to `CMAKE_CXX_FLAGS`. This will enable building of direct show video capture support.
+ - Set `CMAKE_INSTALL_PREFIX` to your desired destination directory. Here it is assumed to `D:\Dev\opencv`.
+ - Then click the configuration and generation button to generate MSVC project.
+ - Launch MSVC++ 2015 and hopefully build cleanly.
+ - Run the `INSTALL` to build the target.
+That's ALL.
 
 ###Compiling LibOVR
 
