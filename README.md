@@ -72,7 +72,10 @@ Here it is assumed that we build under Windows 10 32-bit. The following steps sh
 That's ALL.
 
 ###Building opentrack
+It is recommended to build opentrack using `cmake` or `cmake-gui`.
 
-
+```
+cmake -D Qt5_DIR=D:/testbed/Dev/Qt/5.7/msvc2015/lib/cmake/Qt5 -D OpenCV_DIR=D:/testbed/Dev/opencv -D SDK_RIFT_140=D:/testbed/Dev/LibOVR-140 -D SDK_CONSOLE_DEBUG=BOOL=ON ..
+```
 ###Troubleshooting
 
