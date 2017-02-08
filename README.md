@@ -48,12 +48,31 @@ Here it is assumed that we build under Windows 10 32-bit. The following steps sh
  - Set `CMAKE_INSTALL_PREFIX` to your desired destination directory. Here it is assumed to `D:\Dev\opencv`.
  - Then click the configuration and generation button to generate MSVC project.
  - Launch MSVC++ 2015 and hopefully build cleanly.
- - Run the `INSTALL` to build the target.
+ - Run the `ALL_BUILD` and `INSTALL` to build the target.
 That's ALL.
 
 ###Compiling LibOVR
+It is recommended to build opentrack's custom version of LibOVR-140.
+```
+git clone --recurse-submodules https://github.com/opentrack/opentrack-depends.git
+```
+
+You can also git clone from opentrack's fork of OpenCV.
+```
+git clone --recurse-submodules https://github.com/opentrack/LibOVR
+```
+
+Then we generate a MSVC project using `cmake-gui`.
+Here it is assumed that we build under Windows 10 32-bit. The following steps should make it work.
+ - Using `cmake-gui`, then select VC++ 2015, the build system, to generate the LibOVR MSVC project.
+ - Set `CMAKE_INSTALL_PREFIX` to your desired destination directory. Here is assumed to `D:\Dev\LibOVR-140`.
+ - Then click the configuration and generation button to generate the MSVC project.
+ - Launch MSVC++ 2015 and hopefully build successfully.
+ - Run the `ALL_BUILD` and `INSTALL` to build the targer.
+That's ALL.
 
 ###Building opentrack
+
 
 ###Troubleshooting
 
