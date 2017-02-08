@@ -73,9 +73,22 @@ That's ALL.
 
 ###Building opentrack
 It is recommended to build opentrack using `cmake` or `cmake-gui`.
+Here is assumed that we build under Windows 10 32-bit.
 
+First, using cmake or camke-gui to generate the opnetrack project.
 ```
 cmake -D Qt5_DIR=D:/testbed/Dev/Qt/5.7/msvc2015/lib/cmake/Qt5 -D OpenCV_DIR=D:/testbed/Dev/opencv -D SDK_RIFT_140=D:/testbed/Dev/LibOVR-140 -D SDK_CONSOLE_DEBUG=BOOL=ON ..
 ```
+
+Below instrctions work with msbuild prompt provied by VS2015.
+Second, run `msbuild opentrack.sln`, and you will be able to build everything (opentrack.exe and relevant DLLs).
+
+Third, run `msbuild INSTALL.vcxproj` to build all the components.
+
+Fourth, add D:\Qt\5.7\msvc2015\bin into your PATH env variable -- so that Qt DLLs can be found.
+
+Final, `copy D:\testbed\Dev\Qt\5.7\msvc2015\plugins\platforms\qwindowsd.dll D:\testbed\Dev\opentrack\install\platforms` which copies all the necessary plugin into the same directory containing opentrack.exe.
+That's All.
+
 ###Troubleshooting
 
