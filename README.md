@@ -24,6 +24,9 @@ D:\Dev\Qt\5.7\msvc2015\bin
 or similar, depending on your Qt version.
 
 ####(Optional) Compile a static version of Qt library
+1. http://www.holoborodko.com/pavel/2011/02/01/how-to-compile-qt-4-7-with-visual-studio-2010/
+2. http://developernote.com/2016/06/how-to-compile-qt-5-7-with-vs2015/
+3. http://amin-ahmadi.com/2016/09/22/how-to-build-qt-5-7-statically-using-msvc14-microsoft-visual-studio-2015/
 
 ###Installing OpenCV
 It is recommended to build opentrack's custom version of OpenCV.
