@@ -91,4 +91,9 @@ Final, `copy D:\testbed\Dev\Qt\5.7\msvc2015\plugins\platforms\qwindowsd.dll D:\t
 That's All.
 
 ###Troubleshooting
-
+ - You can set the SDK_CONSOLE_DEBUG cache variable in cmake-gui to have a console window.
+ - If you can compile it, but then run into Qt DLL missing issues when executing it,
+ you can copy all directories inside `D:\Qt\5.7\msvc2015\plugins` into the same directory containing opentrack.exe.
+ Or just copy the copy `D:\Qt\5.7\msvc2015\plugins\platforms\qwindowsd.dll` to  `D:\Dev\opentrack_rebuild\install\platforms`, it will work in my opinion.
+ - I write a batch file it will automatically rebuild and install opentrack project, please find it in the same directory of this tutorial document.
+ 
