@@ -5,8 +5,8 @@ Here are some instructions on how to build live555 using Microsoft Visual Studil
 ##Requirements
  - At least Microsoft Visual Studio 2015
  - live555-latest.tar.gz
- (optional)
- - git
+ - (optional) git
+
 
 ##Building
 1. Extract the `live555-latest.tar.gz` into your source directory.
@@ -20,14 +20,19 @@ Here are some instructions on how to build live555 using Microsoft Visual Studil
 3. Open an MSBuild developer command prompt of Visual Studio 2015 command prompt. 
 
 4. Set the environment variables by running this batch file by running `vsvars32.bat`:
-```"\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat"```
+```
+\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat
+```
 
 5. Build the make files by running this
-```genWindowsMakefiles```
+```
+genWindowsMakefiles
+```
 
 6. Build the project.
 Build each of the components of the project in this order:
-```cd liveMedia
+```vim
+cd liveMedia
 nmake -f liveMedia.mak
 cd ..\groupsock
 nmake -f groupsock.mak
@@ -38,11 +43,14 @@ nmake -f BasicUsageEnvironment.mak
 cd ..\testProgs
 nmake -f testProgs.mak
 cd ..\mediaServer
-nmake -f mediaServer.mak```
+nmake -f mediaServer.mak
+```
 
 7. If you encounter a linker errors when compiling any of the executable projects (like the Live555MediaServer) 
 then build that project manually by entering the command displayed by nmake, b
 ut without the out: parameter and including the ws2_32 library, for example:
-```cl ws2_32.lib msvcrt.lib live555MediaServer.obj DynamicRTSPServer.obj ../liveMedia/libliveMedia.lib ../groupsock/libgroupsock.lib  ../BasicUsageEnvironment/libBasicUsageEnvironment.lib ../UsageEnvironment/libUsageEnvironment.lib```
+```
+cl ws2_32.lib msvcrt.lib live555MediaServer.obj DynamicRTSPServer.obj ../liveMedia/libliveMedia.lib ../groupsock/libgroupsock.lib  ../BasicUsageEnvironment/libBasicUsageEnvironment.lib ../UsageEnvironment/libUsageEnvironment.lib
+```
 
-In the end, this should give a valid Live555MediaServer.exe that is ready to run.
+In the end, this should give a valid `Live555MediaServer.exe` that is ready to run.
