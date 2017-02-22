@@ -5,7 +5,7 @@ Here are some instructions on how to build live555 using Microsoft Visual Studil
 ##Requirements
  - At least Microsoft Visual Studio 2015
  - live555-latest.tar.gz
- optional
+ (optional)
  - git
 
 ##Building
@@ -13,13 +13,13 @@ Here are some instructions on how to build live555 using Microsoft Visual Studil
 
 2. Make the following changes to the `win32config` file:
  - Change `msvcirt.lib` to `msvcrt.lib`.
- - Comment out the `ntwin32.mak` include (i.e. `#!include <ntwin32.mak>`.
+ - Comment out the `ntwin32.mak` include (i.e. `#!include <ntwin32.mak>`).
  - If you installed Visual Studio in the default location then change 
  `TOOLS32` to: `TOOLS32 = C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC`
 
 3. Open an MSBuild developer command prompt of Visual Studio 2015 command prompt. 
 
-4. Set the environment variables by running this batch file by running `vsvars32.bat`
+4. Set the environment variables by running this batch file by running `vsvars32.bat`:
 ```"\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat"```
 
 5. Build the make files by running this
@@ -27,8 +27,7 @@ Here are some instructions on how to build live555 using Microsoft Visual Studil
 
 6. Build the project.
 Build each of the components of the project in this order:
-```
-cd liveMedia
+```cd liveMedia
 nmake -f liveMedia.mak
 cd ..\groupsock
 nmake -f groupsock.mak
