@@ -21,7 +21,7 @@ Here are some instructions on how to build live555 using Microsoft Visual Studil
 
 4. Set the environment variables by running this batch file by running `vsvars32.bat`:
 ```
-\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat
+"\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\vsvars32.bat"
 ```
 
 5. Build the make files by running this
@@ -46,10 +46,10 @@ cd ..\mediaServer
 nmake -f mediaServer.mak
 ```
 
-7. If you encounter a linker errors when compiling any of the executable projects (like the Live555MediaServer) 
-then build that project manually by entering the command displayed by nmake, b
-ut without the out: parameter and including the ws2_32 library, for example:
-```
+7. If you encounter a linker errors when compiling any of the executable projects (like the `Live555MediaServer`) 
+then build that project manually by entering the command displayed by `nmake`, 
+but without the out: parameter and including the `ws2_32` library, for example:
+```vim
 cl ws2_32.lib msvcrt.lib live555MediaServer.obj DynamicRTSPServer.obj ../liveMedia/libliveMedia.lib ../groupsock/libgroupsock.lib  ../BasicUsageEnvironment/libBasicUsageEnvironment.lib ../UsageEnvironment/libUsageEnvironment.lib
 ```
 
